@@ -33,4 +33,25 @@ public class TestRide {
         ride.add(customer);
         assertEquals(1, ride.countCustomers());
     }
+
+    @Test
+    public void testCantAddCustomerOverCapacity() {
+        Customer customer = new Customer("Ren", 5.00, 28);
+        Customer customer2 = new Customer("Stimpy", 10.00, 24);
+        ride.add(customer);
+        ride.add(customer);
+        ride.add(customer);
+        ride.add(customer);
+        ride.add(customer2);
+        ride.add(customer2);
+        ride.add(customer2);
+        ride.add(customer2);
+        assertEquals(8, ride.countCustomers());
+        ride.add(customer2);
+        assertEquals(8, ride.countCustomers());
+    }
+
+//    @Test
+//    public void canCheckForSpaceOnRide() {
+//    }
 }

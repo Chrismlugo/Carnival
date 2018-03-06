@@ -10,6 +10,7 @@ public class Attraction {
         this.name = name;
         this.price = price;
         this.capacity = capacity;
+        this.customers = new ArrayList<>();
     }
 
     public String getName() {
@@ -27,4 +28,11 @@ public class Attraction {
     }
 
 
+    public void add(Customer customer) {
+        this.customers.add(customer);
+    }
+
+    public int countCustomers() {
+       return this.customers.size();
+    }
 }

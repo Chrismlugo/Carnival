@@ -28,6 +28,9 @@ public class TestRide {
     }
 
     @Test
-    public void test() {
+    public void testCanAddCustomer() {
+        Customer customer = new Customer("Stimpy", 10.00, 24);
+        ride.add(customer);
+        assertEquals(1, ride.countCustomers());
     }
 }

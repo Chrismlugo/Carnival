@@ -35,6 +35,7 @@ public abstract class Attraction {
     }
 
     public void add(Customer customer) {
+             // check if the customer is old enough
             if (customer.getAge() > ageRestriction) {
                 // check if there is space on the ride
                 if (checkForSpace() > 0) {

@@ -29,10 +29,17 @@ public class Attraction {
 
 
     public void add(Customer customer) {
-        this.customers.add(customer);
+        if(countCustomers() < capacity) {
+            this.customers.add(customer);
+        }
     }
 
     public int countCustomers() {
        return this.customers.size();
+    }
+
+
+    public int checkForSpace() {
+
     }
 }

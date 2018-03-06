@@ -16,6 +16,8 @@ public class Customer {
         return cash;
     }
 
+
+
     public String getName() {
         return name;
     }
@@ -26,5 +28,9 @@ public class Customer {
 
     public int getHeight() {
         return height;
+    }
+
+    public void setCash(double cash) {
+        this.cash = cash;
     }
 }

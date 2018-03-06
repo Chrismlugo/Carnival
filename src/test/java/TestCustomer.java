@@ -8,7 +8,7 @@ public class TestCustomer {
 
     @Before
     public void setUp() throws Exception {
-        customer = new Customer("Bill", 20.00, 16, 5);
+        customer = new Customer("Bill", 20.00, 16);
     }
 
     @Test
@@ -24,10 +24,5 @@ public class TestCustomer {
     @Test
     public void getAge() {
         assertEquals(16, customer.getAge());
-    }
-
-    @Test
-    public void getHeight() {
-        assertEquals(5, customer.getHeight());
     }
 }

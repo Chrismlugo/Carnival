@@ -5,15 +5,13 @@ public abstract class Attraction {
     double price;
     int capacity;
     int ageRestriction;
-    int heightRestriction;
     ArrayList<Customer> customers;
 
-    public Attraction(String name, double price, int capacity, int ageRestriction, int heightRestriction) {
+    public Attraction(String name, double price, int capacity, int ageRestriction) {
         this.name = name;
         this.price = price;
         this.capacity = capacity;
         this.ageRestriction = ageRestriction;
-        this.heightRestriction = heightRestriction;
         this.customers = new ArrayList<>();
     }
 
@@ -40,12 +38,17 @@ public abstract class Attraction {
             if (customer.getAge() > ageRestriction) {
                 // check if there is space on the ride
                 if (checkForSpace() > 0) {
-                    // add customer to ride if there is a space
-                    this.customers.add(customer);
+                    // charge customer
                     charge(customer);
+                    // add customer to the attraction
+                    this.customers.add(customer);
                     action();
                 }
             }
+    }
+
+    public void remove(){
+        customers.clear();
     }
 
 

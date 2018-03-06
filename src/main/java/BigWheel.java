@@ -1,11 +1,11 @@
 public class BigWheel extends Attraction {
-    public BigWheel(String name, double price, int capacity, int ageRestriction, int heightRestriction) {
-        super(name, price, capacity, ageRestriction, heightRestriction);
+    public BigWheel(String name, double price, int capacity, int ageRestriction) {
+        super(name, price, capacity, ageRestriction);
     }
 
     @Override
     public String action() {
-        return "Whooo!!";
+        return "Whoooo!!";
     }
 
 

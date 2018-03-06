@@ -9,7 +9,7 @@ public class TestBigWheel {
 
     @Before
     public void setUp() throws Exception {
-        bigWheel = new BigWheel("Big Wheel", 4.00, 8, 10, 5);
+        bigWheel = new BigWheel("Big Wheel", 4.00, 8, 10);
     }
 
     @Test
@@ -29,15 +29,15 @@ public class TestBigWheel {
 
     @Test
     public void testCanAddCustomer() {
-        Customer customer = new Customer("Stimpy", 10.00, 24, 4);
+        Customer customer = new Customer("Stimpy", 10.00, 24);
         bigWheel.add(customer);
         assertEquals(1, bigWheel.countCustomers());
     }
 
     @Test
     public void testCantAddCustomerOverCapacity() {
-        Customer customer = new Customer("Ren", 5.00, 28, 3);
-        Customer customer2 = new Customer("Stimpy", 10.00, 24, 4);
+        Customer customer = new Customer("Ren", 5.00, 28);
+        Customer customer2 = new Customer("Stimpy", 10.00, 24);
         bigWheel.add(customer);
         bigWheel.add(customer);
         bigWheel.add(customer);
@@ -53,8 +53,8 @@ public class TestBigWheel {
 
     @Test
     public void canCheckForSpaceOnRide() {
-        Customer customer = new Customer("Ren", 5.00, 28, 4);
-        Customer customer2 = new Customer("Stimpy", 10.00, 24, 5);
+        Customer customer = new Customer("Ren", 5.00, 28);
+        Customer customer2 = new Customer("Stimpy", 10.00, 24);
         bigWheel.add(customer);
         bigWheel.add(customer);
         bigWheel.add(customer);
@@ -65,14 +65,14 @@ public class TestBigWheel {
 
     @Test
     public void testCantAddIfTooYoung(){
-        Customer customer = new Customer("James", 2.00, 8, 5);
+        Customer customer = new Customer("James", 2.00, 8);
         bigWheel.add(customer);
         assertEquals(0, bigWheel.countCustomers());
     }
 
     @Test
     public void testCustomerCanPayToRide(){
-        Customer customer = new Customer("Lauren", 12.00, 14, 5);
+        Customer customer = new Customer("Lauren", 12.00, 14);
              bigWheel.add(customer);
              assertEquals(8.00, customer.getCash(), 0.01 );
     }

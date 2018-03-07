@@ -6,6 +6,7 @@ public abstract class Attraction {
     int capacity;
     int ageRestriction;
     ArrayList<Customer> customers;
+    ArrayList<Customer> queue;
 
     public Attraction(String name, double price, int capacity, int ageRestriction) {
         this.name = name;
@@ -13,6 +14,7 @@ public abstract class Attraction {
         this.capacity = capacity;
         this.ageRestriction = ageRestriction;
         this.customers = new ArrayList<>();
+        this.queue = new ArrayList<>();
     }
 
     public String getName() {
@@ -34,6 +36,8 @@ public abstract class Attraction {
         customer.setCash(result);
     }
 
+
+
     public void add(Customer customer) {
              // check if the customer is old enough
             if (customer.getAge() > ageRestriction) {
@@ -42,6 +46,7 @@ public abstract class Attraction {
                     // charge customer
                     charge(customer);
                     // add customer to the attraction
+                    this.queue.remove(customer);
                     this.customers.add(customer);
                     action();
                 }
@@ -58,6 +63,10 @@ public abstract class Attraction {
        return this.customers.size();
     }
 
+    public int countCustomersInQueue(){
+        return this.queue.size();
+    }
+
 
     public int checkForSpace() {
         int capacity = this.capacity;
@@ -67,4 +76,13 @@ public abstract class Attraction {
     }
 
     public abstract String action();
+
+
+    public void addToQueue(Customer customer) {
+        queue.add(customer);
+    }
+
+    public void removeFromQueue(Customer customer){
+        queue.remove(0);
+    }
 }

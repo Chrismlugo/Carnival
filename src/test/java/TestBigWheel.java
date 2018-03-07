@@ -83,4 +83,8 @@ public class TestBigWheel {
         assertEquals("Whoooo!!", bigWheel.action());
     }
 
+    @Test
+    public void testHasQueue() {
+        assertEquals(0, bigWheel.countCustomersInQueue());
+    }
 }

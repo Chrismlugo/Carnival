@@ -1,4 +1,4 @@
-public class BigTop extends Attraction {
+public class BigTop extends Attraction implements IAction {
     public BigTop(String name, double price, int capacity, int ageRestriction) {
         super(name, price, capacity, ageRestriction);
     }

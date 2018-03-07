@@ -48,7 +48,6 @@ public abstract class Attraction {
                     // add customer to the attraction
                     this.queue.remove(customer);
                     this.customers.add(customer);
-                    action();
                 }
             }
     }
@@ -75,7 +74,7 @@ public abstract class Attraction {
         return capacity - spacesTaken;
     }
 
-    public abstract String action();
+//    public abstract String action();
 
 
     public void addToQueue(Customer customer) {

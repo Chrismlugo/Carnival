@@ -12,7 +12,15 @@ public class TestClown {
     }
 
     @Test
-    public void throwPie() {
-        assertEquals("Splat!", clown.throwPie());
+    public void canThrowPieAtCustomer() {
+        Customer customer = new Customer("Chris", 20.00, 26);
+        assertEquals("Bobo throws pie at Chris...Splat!", clown.throwsPie(customer));
+    }
+
+    @Test
+    public void canThrowPieAtClown() {
+        Clown clown2 = new Clown("Rollo");
+        assertEquals("Bobo throws pie at Rollo...Splat!", clown.throwsPie(clown2));
+
     }
 }
